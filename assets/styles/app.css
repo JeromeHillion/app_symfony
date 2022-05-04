@@ -1,0 +1,84 @@
+
+.navbar,
+.left-sub-navbar,
+.movies-sub-navbar,
+.movies-options,
+.tv-show-sub-navbar,
+.tv-show-options,
+.artists-sub-navbar,
+.artists-options,
+.user-sub-navbar
+{
+    display: flex;
+}
+
+.navbar{
+    justify-content: space-between;
+
+}
+
+.logo-title-navbar,
+ .left-sub-navbar,
+ .movies-sub-navbar,
+ .tv-show-sub-navbar,
+ .artists-sub-navbar,
+.right-sub-navbar,
+.user-sub-navbar,
+user-login-sub-navbar,
+.search-sub-navbar,
+user-register-sub-navbar
+ {
+     width: 50%;
+}
+
+.title-navbar,
+#movies-select,
+#tv-show-select,
+#artist-select,
+.user-login-sub-navbar,
+.user-register-sub-navbar,
+.search-sub-navbar
+{
+    font-weight: 600;
+    color: #fff;
+}
+
+.user-login-sub-navbar,
+.user-register-sub-navbar,
+.search-sub-navbar a
+{
+   text-decoration: none;
+}
+
+.title-navbar,
+#movies-select,
+#tv-show-select,
+#artist-select,
+.user-login-sub-navbar,
+.user-register-sub-navbar,
+.search-sub-navbar
+
+{
+
+    background-color: #032541 ;
+    padding: .5rem .5rem;
+}
+
+.logo-title-navbar a,
+ .left-sub-navbar a,
+ .movies-sub-navbar a,
+ .tv-show-sub-navbar a,
+ .artists-sub-navbar a
+ {
+    font-weight: 400;
+}
+
+.movies-sub-navbar,
+.movies-options,
+.tv-show-sub-navbar,
+.tv-show-options,
+.artists-sub-navbar,
+artists-options
+{
+    flex-direction: column;
+}
