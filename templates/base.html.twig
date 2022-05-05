@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
     <link rel="icon"
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
@@ -15,41 +16,70 @@
     {% endblock %}
 </head>
 <body>
-<div class="navbar">
     <header>
-        <nav>
-            <div class="conteneur-nav">
-                <label for="mobile">Afficher / Cacher le menu</label>
-                <input type="checkbox" id="mobile" role="button">
-                <ul>
-                    <li class="deroulant"><a href="#">Films</a>
-                        <ul class="sous">
-                            <li><a href="#">Cours HTML et CSS</a></li>
-                            <li><a href="#">Cours JavaScript</a></li>
-                            <li><a href="#">Cours PHP et MySQL</a></li>
-                        </ul>
-                    </li>
-                    <li class="deroulant"><a href="#">Émissions TV</a>
-                        <ul class="sous">
-                            <li><a href="#">Cours HTML et CSS</a></li>
-                            <li><a href="#">Cours JavaScript</a></li>
-                            <li><a href="#">Cours PHP et MySQL</a></li>
-                        </ul>
-                    </li>
-                    <li class="deroulant"><a href="#">Artistes</a>
-                        <ul class="sous">
-                            <li><a href="#">Cours HTML et CSS</a></li>
-                            <li><a href="#">Cours JavaScript</a></li>
-                            <li><a href="#">Cours PHP et MySQL</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <main>
+            <header class="p-3 mb-3 border-bottom navbar-base-color">
+                <div class="container">
+                    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                        <a class="logo" href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                            <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" alt="">
+                        </a>
 
-        <div class="conteneur-contenu">
-            <p>Du contenu sous le menu</p>
-        </div>
+                        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle link-white fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Films
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Populaires</a></li>
+                                    <li><a class="dropdown-item" href="#">Du momment</a></li>
+                                    <li><a class="dropdown-item" href="#">À venir</a></li>
+                                    <li><a class="dropdown-item" href="#">Les mieux notés</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle link-white fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Émissions télévisées
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Difusés aujourd'hui</a></li>
+                                    <li><a class="dropdown-item" href="#">En cours de diffusion</a></li>
+                                    <li><a class="dropdown-item" href="#">Les mieux notés</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle link-white fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Artistes
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Les plus consultés</a></li>
+                                </ul>
+                            </li>
+
+
+                        </ul>
+
+                        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                            <input type="search" class="form-control" placeholder="Rechercher..." aria-label="Search">
+                        </form>
+
+                        <div class="dropdown text-end">
+                            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="{{ asset('images/account.png') }}" alt="mdo" width="32" height="32" class="rounded-circle">
+                            </a>
+                            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                                <li><a class="dropdown-item" href="#">Se connecter</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">S'inscrire</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </main>
+
+
+
     </header>
 </div>
     {% block body %}

@@ -3,30 +3,26 @@
 {% block title %}Hello TestController!{% endblock %}
 
 {% block body %}
-<div class="dataPopularMovies">
+    <div class="dataPopularMovies">
+        <div class="container">
+            <div class="row">
+                <h3>Populaires</h3>
+                {% for dataPopularMovie in dataPopularMovies %}
 
-{% for dataPopularMovie in dataPopularMovies %}
-<div class="cards">
- <div class="dataPopularMovie">
-  <div class="backdrop_path">
-   <img src="https://image.tmdb.org/t/p/w220_and_h330_face/{{dataPopularMovie.backdrop_path}}" alt="backdrop_path"/>
+                    <div class="col">
+                        <div class="card border-0" style="width: 10rem;">
+                            <img src="https://image.tmdb.org/t/p/w220_and_h330_face/{{ dataPopularMovie.poster_path }}"
+                                 alt="{{ dataPopularMovie.title }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold"><a class="link-dark text-decoration-none" href="">{{ dataPopularMovie.title }}</a></h5>
+                                <p class="card-text text-secondary">{{ dataPopularMovie.release_date|date("m/d/Y") }}</p>
 
-  </div>
+                            </div>
+                        </div>
+                    </div>
 
-  <div class="title">
-   <h2>{{dataPopularMovie.title}}</h2>
-  </div>
-
-  <div class="release_date">
-   <time>{{dataPopularMovie.release_date}}</time>
-  </div>
- </div>
-</div>
-
-
-
-
-{% endfor %}
-
-</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}
