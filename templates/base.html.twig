@@ -16,52 +16,41 @@
 </head>
 <body>
 <div class="navbar">
-    <div class="left-sub-navbar">
-        <div class="logo-title-navbar">
-            <div class="title-navbar">gmdb</div>
-            <div class="shape-navbar"></div>
-        </div>
-        <div class="movies-sub-navbar">
-            <div id="movies-select">Films</div>
-            <div class="movies-options">
-                <a href="/">Populaires</a>
-                <a href="/">Du moment</a>
-                <a href="/">À venir</a>
-                <a href="/">Les mieux notés</a>
+    <header>
+        <nav>
+            <div class="conteneur-nav">
+                <label for="mobile">Afficher / Cacher le menu</label>
+                <input type="checkbox" id="mobile" role="button">
+                <ul>
+                    <li class="deroulant"><a href="#">Films</a>
+                        <ul class="sous">
+                            <li><a href="#">Cours HTML et CSS</a></li>
+                            <li><a href="#">Cours JavaScript</a></li>
+                            <li><a href="#">Cours PHP et MySQL</a></li>
+                        </ul>
+                    </li>
+                    <li class="deroulant"><a href="#">Émissions TV</a>
+                        <ul class="sous">
+                            <li><a href="#">Cours HTML et CSS</a></li>
+                            <li><a href="#">Cours JavaScript</a></li>
+                            <li><a href="#">Cours PHP et MySQL</a></li>
+                        </ul>
+                    </li>
+                    <li class="deroulant"><a href="#">Artistes</a>
+                        <ul class="sous">
+                            <li><a href="#">Cours HTML et CSS</a></li>
+                            <li><a href="#">Cours JavaScript</a></li>
+                            <li><a href="#">Cours PHP et MySQL</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
+        </nav>
 
-
+        <div class="conteneur-contenu">
+            <p>Du contenu sous le menu</p>
         </div>
-        <div class="tv-show-sub-navbar">
-            <div id="tv-show-select">Émissions télévisées</div>
-            <div class="tv-show-options">
-                <a href="/">Populaires</a>
-                <a href="/">Diffusées aujourd'hui</a>
-                <a href="/">En cours de diffusion</a>
-                <a href="/">Les mieux notés</a>
-            </div>
-
-        </div>
-        <div class="artists-sub-navbar">
-            <div id="artist-select">Artistes</div>
-            <div class="artists-options">
-                <a href="/">Les plus consultés</a>
-            </div>
-        </div>
-    </div>
-    <div class="right-sub-navbar">
-        <div class="user-sub-navbar">
-            {% if app.session.get("connected") == true %}
-
-
-            {% else %}
-                <div class="user-login-sub-navbar">Connection</div>
-                <div class="user-register-sub-navbar" >Inscription</div>
-
-                <div class="search-sub-navbar">Rechercher</div>
-            {% endif%}
-        </div>
-    </div>
+    </header>
 </div>
     {% block body %}
 

@@ -6,25 +6,23 @@
 <div class="dataPopularMovies">
 
 {% for dataPopularMovie in dataPopularMovies %}
+<div class="cards">
+ <div class="dataPopularMovie">
+  <div class="backdrop_path">
+   <img src="https://image.tmdb.org/t/p/w220_and_h330_face/{{dataPopularMovie.backdrop_path}}" alt="backdrop_path"/>
 
-<div class="dataPopularMovie">
-<div class="backdrop_path">
- <img src="https://image.tmdb.org/t/p/w500/{{dataPopularMovie.backdrop_path}}" alt="backdrop_path"/>
+  </div>
 
-</div> 
+  <div class="title">
+   <h2>{{dataPopularMovie.title}}</h2>
+  </div>
 
-<div class="title">
-<h1>{{dataPopularMovie.title}}</h1>
+  <div class="release_date">
+   <time>{{dataPopularMovie.release_date}}</time>
+  </div>
+ </div>
 </div>
 
-<div class="release_date">
-<time>{{dataPopularMovie.release_date}}</time>
-</div>
-
-<div class="overwiew">
-<p>{{dataPopularMovie.overview}}</p>
-</div>
-</div>
 
 
 
