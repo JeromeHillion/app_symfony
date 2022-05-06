@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Service\ApiService;
 use JetBrains\PhpStorm\NoReturn;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
@@ -15,15 +17,19 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class TestController extends AbstractController
 {
+    private ApiService $apiService;
+
+
     //private $apiKey;
 
-    private HttpClientInterface $client;
-
-    public function __construct(HttpClientInterface $client)
+    /**
+     * @param ApiService $apiService
+     */
+    public function __construct(ApiService $apiService)
     {
-        $this->client = $client;
-        //$this->apiKey = $apiKey;
+        $this->apiService = $apiService;
     }
+
 
     /**
      * @throws TransportExceptionInterface
@@ -33,22 +39,33 @@ class TestController extends AbstractController
      * @throws ClientExceptionInterface
      */
     #[NoReturn] #[Route('/test', name: 'app_test')]
-    public function getPopular()
+    public function getPopular(): Response
     {
-        $response = $this->client->request(
+        $tops = $this->apiService->getPopular();
 
-            'GET',
-            'https://api.themoviedb.org/3/movie/popular?api_key=ddec886742429cd922ebad0010e96c2d&language=fr'
-        );
+        /*dd($tops);*/
 
-        $dataPopularMovies = $response->toArray();
-/*dd($dataPopularMovies);*/
-        return $this->render('test/index.html.twig',[
-
-            'dataPopularMovies' => $dataPopularMovies["results"]
-
+        return $this->render('test/index.html.twig', [
+            'tops' => $tops
         ]);
-       
-     
+
+    }
+
+    /**
+     * @throws TransportExceptionInterface
+     * @throws ServerExceptionInterface
+     * @throws RedirectionExceptionInterface
+     * @throws DecodingExceptionInterface
+     * @throws ClientExceptionInterface
+     */
+    #[NoReturn] #[Route('/{category}/{id}')]
+    public function getInfos(Request $request)
+    {
+
+        $id = $request->get('id');
+        $category = $request->get('category');
+        $movie = $this->apiService->getInfosById($category, $id);
+        dd($movie);
+
     }
 }

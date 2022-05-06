@@ -3,19 +3,18 @@
 {% block title %}Hello TestController!{% endblock %}
 
 {% block body %}
-    <div class="dataPopularMovies">
-        <div class="container">
-            <div class="row">
-                <h3>Populaires</h3>
-                {% for dataPopularMovie in dataPopularMovies %}
+        <div class="container ">
+            <h3>Populaires</h3>
+            <div class="d-flex flex-row overflow-x">
+                {% for top in tops %}
 
-                    <div class="col">
+                    <div class="col m-3">
                         <div class="card border-0" style="width: 10rem;">
-                            <img src="https://image.tmdb.org/t/p/w220_and_h330_face/{{ dataPopularMovie.poster_path }}"
-                                 alt="{{ dataPopularMovie.title }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold"><a class="link-dark text-decoration-none" href="">{{ dataPopularMovie.title }}</a></h5>
-                                <p class="card-text text-secondary">{{ dataPopularMovie.release_date|date("m/d/Y") }}</p>
+                            <img src="https://image.tmdb.org/t/p/w220_and_h330_face/{{ top.poster_path }}"
+                                 alt="{{ top.title }}"  class="card-img-top" alt="...">
+                            <div class="card-body p-0">
+                                <h2 class="card-title fs-6 text fw-bold"><a class="link-dark text-decoration-none" href="/{{top.slug}}/{{top.id}}">{{ top.title }}</a></h2>
+                                <p class="card-text text-secondary">{{ top.release_date|date("m/d/Y") }}</p>
 
                             </div>
                         </div>
@@ -24,5 +23,4 @@
                 {% endfor %}
             </div>
         </div>
-    </div>
 {% endblock %}

@@ -29,3 +29,9 @@ header a.logo img{
   display: block;
   width: 100%;
 }
+
+.overflow-x{
+  height: 23rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
